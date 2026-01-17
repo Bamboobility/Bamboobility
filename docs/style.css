@@ -4,6 +4,8 @@
   --text: #1a3b04;
   --muted: #4a6b3a;
   --accent: #38bdf8;
+  --hero-top: #f1f9ec;
+  --hero-bottom: #c4d59e;
 }
 
 * {
@@ -21,8 +23,8 @@ body {
 .hero {
   padding: 6rem 1.5rem;
   text-align: center;
-  background: linear-gradient(180deg, #f1f9ec, #c4d59e);
-  color: #0b1f0a; /* or white, see below */
+  background: linear-gradient(180deg, var(--hero-top), var(--hero-bottom);
+  color: #0b1f0a; 
 }
 
 .hero h1 {
