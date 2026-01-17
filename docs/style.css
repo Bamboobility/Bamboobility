@@ -23,7 +23,7 @@ body {
 .hero {
   padding: 6rem 1.5rem;
   text-align: center;
-  background: linear-gradient(180deg, var(--hero-top), var(--hero-bottom);
+  background: linear-gradient(180deg, var(--hero-top), var(--hero-bottom));
   color: #0b1f0a; 
 }
 
