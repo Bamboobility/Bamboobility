@@ -21,7 +21,7 @@ body {
 .hero {
   padding: 6rem 1.5rem;
   text-align: center;
-  background: linear-gradient(180deg, #f1f9ec, #f1f9ec);
+  background: linear-gradient(180deg, #f1f9ec, #059347);
 }
 
 .hero h1 {
