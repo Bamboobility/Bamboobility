@@ -22,6 +22,7 @@ body {
   padding: 6rem 1.5rem;
   text-align: center;
   background: linear-gradient(180deg, #f1f9ec, #059347);
+  color: #0b1f0a; /* or white, see below */
 }
 
 .hero h1 {
