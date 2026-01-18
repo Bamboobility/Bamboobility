@@ -24,9 +24,15 @@ body {
   padding: 6rem 1.5rem;
   text-align: center;
 
-  background-image: url("images/final_CAD.png");
-  background-size: cover;        /* fill the area */
-  background-position: center;   /* center the image */
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+    ),
+    url("images/final_CAD.png");
+
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
 
   color: #ffffff;
