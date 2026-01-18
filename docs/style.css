@@ -76,8 +76,8 @@ body {
 }
 
 .button.dark {
-  background: var(--text);
-  color: #020617;
+  background: e6f0dc;
+  color: var(--text);
 }
 
 .button:hover {
