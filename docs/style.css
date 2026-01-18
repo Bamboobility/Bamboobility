@@ -21,10 +21,26 @@ body {
 }
 
 .hero {
+  min-height: 100vh;
   padding: 6rem 1.5rem;
   text-align: center;
-  background: linear-gradient(180deg, var(--hero-top), var(--hero-bottom));
-  color: #0b1f0a; 
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+    ),
+    url("images/final_CAD.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero h1 {
