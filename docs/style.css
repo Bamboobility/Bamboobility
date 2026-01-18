@@ -76,7 +76,7 @@ body {
 }
 
 .button.dark {
-  background: e6f0dc;
+  background: #e6f0dc;
   color: var(--text);
 }
 
