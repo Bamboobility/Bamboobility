@@ -62,6 +62,12 @@ body {
   z-index: 10;
 }
 
+@media (max-width: 700px) {
+  .hero-logo {
+    height: 40px;
+  }
+}
+
 .hero h1 {
   font-size: clamp(2.5rem, 5vw, 4rem);
   margin-bottom: 1rem;
