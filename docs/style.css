@@ -85,6 +85,12 @@ body {
   padding: 0 1.5rem;
 }
 
+.section-alt {
+  background: #e6f0dc;   /* slightly darker than --bg */
+  padding: 4rem 1.5rem;
+  border-radius: 16px;
+}
+
 .section h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
