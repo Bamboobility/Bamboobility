@@ -24,7 +24,7 @@ body {
   padding: 6rem 1.5rem;
   text-align: center;
 
-  background-image: url("../images/final_CAD.png");
+  background-image: url("images/final_CAD.png");
   background-size: cover;        /* fill the area */
   background-position: center;   /* center the image */
   background-repeat: no-repeat;
