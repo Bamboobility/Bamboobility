@@ -71,8 +71,8 @@ body {
   transition: 0.2s;
 }
 
-.button.primary {
-  background: var(--accent);
+.button.dark {
+  background: var(--text);
   color: #020617;
 }
 
