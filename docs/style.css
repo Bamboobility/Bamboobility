@@ -177,5 +177,26 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+.gallery-item {
+  text-align: center;
+}
 
+.gallery-item img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
 
+.gallery-item figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.gallery-item figcaption {
+  color: rgba(26, 59, 4, 0.85);
+}
+
+.gallery {
+  row-gap: 2rem;
+}
