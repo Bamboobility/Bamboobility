@@ -93,6 +93,7 @@ body {
 .section h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
+  margin-top: 0;
 }
 
 .video-container {
