@@ -158,7 +158,7 @@
     <a class="button dark" href="https://github.com/Bamboobility/Bamboobility/discussions">Discussions</a>
     <a class="button dark" href="https://github.com/Bamboobility/Bamboobility">GitHub</a>
     <a class="button dark" href="https://www.youtube.com/@Bamboobility">YouTube Channel</a>
-    <a class="button dark" href="#" id="contactBtn">Contact</a>
+    <button class="button dark" id="contactBtn" type="button">Contact</button>
   </div>
 </section>
 
@@ -190,10 +190,16 @@
   </div>
 </div>
 <script>
+document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('contactModal');
   const openBtn = document.getElementById('contactBtn');
   const closeBtn = document.getElementById('contactClose');
   const sendBtn = document.getElementById('contactSend');
+
+  if (!modal || !openBtn || !closeBtn || !sendBtn) {
+    console.error("Contact modal elements missing:", { modal, openBtn, closeBtn, sendBtn });
+    return;
+  }
 
   function openModal() {
     modal.classList.add('open');
@@ -205,19 +211,13 @@
     modal.setAttribute('aria-hidden', 'true');
   }
 
-  openBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    openModal();
-  });
-
+  openBtn.addEventListener('click', openModal);
   closeBtn.addEventListener('click', closeModal);
 
-  // Click outside content closes
   modal.addEventListener('click', (e) => {
     if (e.target === modal) closeModal();
   });
 
-  // ESC closes
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeModal();
   });
@@ -228,13 +228,15 @@
     const content = document.getElementById('contactContent').value.trim();
 
     const to = "bamboobility@gmail.com";
-    const finalSubject = subject ? subject : "Website contact";
+    const finalSubject = subject || "Website contact";
     const body = `Name: ${name || "-"}\n\n${content || ""}`;
 
-    const mailto = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(finalSubject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
+    window.location.href =
+      `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(finalSubject)}&body=${encodeURIComponent(body)}`;
   });
+});
 </script>
+
 
 </body>
 </html>
