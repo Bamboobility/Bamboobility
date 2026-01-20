@@ -300,3 +300,16 @@ footer {
   cursor: pointer;
 }
 
+/* --- Contact modal: make sure the bottom (Send) is reachable --- */
+.modal-content {
+  max-height: calc(100vh - 32px); /* fit inside the screen */
+  overflow-y: auto;               /* scroll if content is taller */
+}
+
+/* Make buttons that are <button class="button"> look like your links */
+button.button {
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+
