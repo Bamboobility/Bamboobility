@@ -151,27 +151,24 @@ button.button {
 
 /* ===== Individual gallery item (tile) ===== */
 .gallery-item {
-  position: relative;          /* needed for absolute figcaption */
-  overflow: hidden;            /* keeps rounded corners + caption inside */
+  position: relative;          /* anchor for figcaption */
+  overflow: hidden;            /* clip to rounded corners */
   border-radius: 12px;         /* rounded edges */
   height: 240px;               /* same tile height for all */
-  background: #fff;            /* fill remaining area */
-  display: flex;               /* center the image inside */
-  align-items: center;
-  justify-content: center;
+  background: #fff;            /* letterbox area */
 }
 
-/* ===== Image ===== */
+/* Center the image inside the fixed tile */
 .gallery-item img {
   width: 100%;
   height: 100%;
-  object-fit: contain;         /* show FULL image (no cropping) */
-  object-position: center;
   display: block;
-  background: #fff;            /* helpful for transparent PNGs */
+  object-fit: contain;         /* FULL image, no crop */
+  object-position: center;
+  background: #fff;
 }
 
-/* ===== Hover caption (hidden by default) ===== */
+/* ===== Hover caption ===== */
 .gallery-item figcaption {
   position: absolute;
   left: 0;
@@ -181,30 +178,34 @@ button.button {
   padding: 0.75rem 1rem;
   text-align: center;
 
-  background: rgba(230, 240, 220, 0.9); /* #e6f0dc with transparency */
+  background: rgba(230, 240, 220, 0.92);
   color: #1a3b04;
 
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
+
+  z-index: 2;                  /* ensure it's above the image */
+  pointer-events: none;        /* caption won’t block hover */
 
   opacity: 0;
   transform: translateY(100%);
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* ===== Reveal caption on hover ===== */
+/* Reveal on hover (desktop) */
 .gallery-item:hover figcaption {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* ===== Mobile: always show captions ===== */
-@media (max-width: 700px) {
+/* Touch devices: no hover -> always show caption */
+@media (hover: none) and (pointer: coarse) {
   .gallery-item figcaption {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 
 
 .links {
