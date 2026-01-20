@@ -150,18 +150,22 @@ button.button {
 }
 
 /* ===== Individual gallery item ===== */
+/* 1) Make every tile a fixed size */
 .gallery-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
+  height: 240px;              /* pick what looks good */
+  background: #fff;           /* the “remaining space” color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* ===== Image ===== */
+/* 2) Fit image inside without cropping */
 .gallery-item img {
   width: 100%;
-  display: block;
-  border-radius: 12px;
-  background: var(--panel);
+  height: 100%;
+  object-fit: contain;        /* shows full image */
+  object-position: center;
+  background: #fff;           /* helps if PNG has transparency */
 }
 
 /* ===== Hover caption (hidden by default) ===== */
