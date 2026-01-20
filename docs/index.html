@@ -158,13 +158,83 @@
     <a class="button dark" href="https://github.com/Bamboobility/Bamboobility/discussions">Discussions</a>
     <a class="button dark" href="https://github.com/Bamboobility/Bamboobility">GitHub</a>
     <a class="button dark" href="https://www.youtube.com/@Bamboobility">YouTube Channel</a>
-    <a class="button dark" href="mailto:hello@bamboobility.org">Contact</a>
+    <a class="button dark" href="#" id="contactBtn">Contact</a>
   </div>
 </section>
 
 <footer>
   <p>© 2026 Bamboobility · Open Source CC-BY</p>
 </footer>
+
+<div id="contactModal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <button class="modal-close" id="contactClose" aria-label="Close">×</button>
+    <h2>Contact</h2>
+
+    <label>
+      Name:
+      <input type="text" id="contactName" placeholder="Your name">
+    </label>
+
+    <label>
+      Subject:
+      <input type="text" id="contactSubject" placeholder="Subject">
+    </label>
+
+    <label>
+      Content:
+      <textarea id="contactContent" rows="6" placeholder="Write your message..."></textarea>
+    </label>
+
+    <button class="button" id="contactSend">Send</button>
+  </div>
+</div>
+<script>
+  const modal = document.getElementById('contactModal');
+  const openBtn = document.getElementById('contactBtn');
+  const closeBtn = document.getElementById('contactClose');
+  const sendBtn = document.getElementById('contactSend');
+
+  function openModal() {
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+  }
+
+  openBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    openModal();
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+
+  // Click outside content closes
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // ESC closes
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  sendBtn.addEventListener('click', () => {
+    const name = document.getElementById('contactName').value.trim();
+    const subject = document.getElementById('contactSubject').value.trim();
+    const content = document.getElementById('contactContent').value.trim();
+
+    const to = "bamboobility@gmail.com";
+    const finalSubject = subject ? subject : "Website contact";
+    const body = `Name: ${name || "-"}\n\n${content || ""}`;
+
+    const mailto = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(finalSubject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+  });
+</script>
 
 </body>
 </html>
