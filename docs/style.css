@@ -166,7 +166,7 @@ button.button {
   position: relative;          /* anchor for figcaption */
   overflow: hidden;            /* clip to rounded corners */
   border-radius: 12px;         /* rounded edges */
-  height: 220px;               /* same tile height for all */
+  height: 200px;               /* same tile height for all */
   background: #fff;            /* letterbox area */
   padding: 10px;
 }
