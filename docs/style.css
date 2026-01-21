@@ -166,9 +166,9 @@ button.button {
   position: relative;          /* anchor for figcaption */
   overflow: hidden;            /* clip to rounded corners */
   border-radius: 12px;         /* rounded edges */
-  height: auto;               /* same tile height for all */
+  height: 220px;               /* same tile height for all */
   background: #fff;            /* letterbox area */
-  aspect-ration: 4/3;
+  padding: 10px;
 }
 
 /* Center the image inside the fixed tile */
