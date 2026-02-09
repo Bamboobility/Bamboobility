@@ -228,12 +228,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('contactModal');
   const openBtn = document.getElementById('contactBtn');
   const closeBtn = document.getElementById('contactClose');
-  const sendBtn = document.getElementById('contactSend');
-
-  if (!modal || !openBtn || !closeBtn || !sendBtn) {
-    console.error("Contact modal elements missing:", { modal, openBtn, closeBtn, sendBtn });
-    return;
-  }
 
   function openModal() {
     modal.classList.add('open');
@@ -254,19 +248,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeModal();
-  });
-
-  sendBtn.addEventListener('click', () => {
-    const name = document.getElementById('contactName').value.trim();
-    const subject = document.getElementById('contactSubject').value.trim();
-    const content = document.getElementById('contactContent').value.trim();
-
-    const to = "bamboobility@gmail.com";
-    const finalSubject = subject || "Website contact";
-    const body = `Name: ${name || "-"}\n\n${content || ""}`;
-
-    window.location.href =
-      `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(finalSubject)}&body=${encodeURIComponent(body)}`;
   });
 });
 </script>
